@@ -18,7 +18,6 @@ X=[0;0;0];
 mat_A=[0, 1, 0;0, -B/J, Ki/J; 0, -Km/La, -Ra/La];
 mat_B=[0; 0; 1/La];
 mat_C=[1,0,0];
-mat_Co=[1, 0, 0; 0, 1, 0];
 mat_Aa=[mat_A,zeros(3,1);-mat_C, 0];
 mat_Ba=[mat_B;0];
 q=diag([ 1, 1/8^2, 1/3^2, 15000]);r=1;
