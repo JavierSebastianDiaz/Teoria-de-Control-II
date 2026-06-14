@@ -14,7 +14,6 @@ theta_ref = [(pi/2)*ones(2500,1);-(pi/2)*ones(2500,1);(pi/2)*ones(2500,1);-(pi/2
 TL = [10*ones(2500,1);zeros(2500,1);10*ones(2500,1);zeros(2501,1)];
 
 integral = 0;
-error_prev = 0;
 X=[0;0;0];
 mat_A=[0, 1, 0;0, -B/J, Ki/J; 0, -Km/La, -Ra/La];
 mat_B=[0; 0; 1/La];
@@ -31,8 +30,6 @@ for k = 1: length(t)-1
     
     integral = integral + error(k)*dt;
     Va(k)=-Ka*[X ; integral];
-
-    error_prev = error(k);
     X=modmotor(dt, X, [Va(k), TL(k)]);
     
     ia(k+1)=X(3);
