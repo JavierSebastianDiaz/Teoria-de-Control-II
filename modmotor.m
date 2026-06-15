@@ -1,0 +1,22 @@
+function [X]=modmotor(t_etapa, xant, accion)
+Ra = 0.999976;
+La = 1.023575;
+Km = 0.099994;
+Ki = 10.010591;
+J = 2.048650;
+B = 0.500588;
+Va=accion(1);
+TL=accion(2);
+h=1e-6;
+theta= xant(1);
+wr= xant(2);
+ia= xant(3);
+for ii=1:t_etapa/h
+    dia = -(Ra/La)*ia -(Km/La)*wr +(1/La)*Va;
+    dwr = (Ki/J)*ia -(B/J)*wr -(1/J)*TL;
+    dtheta = wr;
+    wr=wr+dwr*h;
+    ia=ia+dia*h;
+    theta=theta+dtheta*h;
+end
+X=[theta;wr;ia];
