@@ -24,5 +24,5 @@ end
 
 Tmax = Ki * max(ia)
 
-subplot(2,1,1), plot(t, ia), xlabel('t'), ylabel('i_a(t)');
-subplot(2,1,2), plot(t, wr), xlabel('t'), ylabel('w_r(t)');
+subplot(2,1,1), plot(t, ia, 'k', 'LineWidth', 3), xlabel('t'), ylabel('i_a(t)'), grid on;
+subplot(2,1,2), plot(t, wr, 'k', 'LineWidth', 3), xlabel('t'), ylabel('w_r(t)'), grid on;
