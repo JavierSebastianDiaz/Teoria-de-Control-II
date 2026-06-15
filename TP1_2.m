@@ -12,7 +12,12 @@ x = 200;
 t1 = t0+x;
 t2 = t0+x*2;
 t3 = t0+x*3;
-% plot(Vc(1:5000)),hold on,scatter(t1,Vc(t1)),hold on,scatter(t2,Vc(t2)),hold on,scatter(t3,Vc(t3)),grid on
+
+plot(t(1:5000), Vc(1:5000),'k', 'LineWidth', 3), xlabel('t[s]'), ylabel('V_C[V]'), grid on, hold on;
+plot(t(t1), Vc(t1), 'or', 'LineWidth', 5);
+plot(t(t2), Vc(t2), 'or', 'LineWidth', 5);
+plot(t(t3), Vc(t3), 'or', 'LineWidth', 5);
+legend('','Puntos Chen');
 
 K = max(Vc);
 k1 = Vc(t1)/K - 1;
