@@ -37,16 +37,17 @@ for k = 1: length(t)-1
 end
 
 subplot(4,1,1), plot(t, ia, 'k', 'LineWidth', 3); 
-xlabel('t'), ylabel('i_a(t)'),grid on;
+xlabel('t'), ylabel('i_a(t)', 'Fontsize', 28),grid on;
 legend('Corriente del Motor');
+title('Control con Variables de Estado de Motor CC', 'Fontsize', 28);
 subplot(4,1,2), plot(t, wr, 'k', 'LineWidth', 3); 
-xlabel('t'), ylabel('\omega_r(t)'),grid on;
+xlabel('t'), ylabel('\omega_r(t)', 'Fontsize', 28),grid on;
 legend('Velocidad del Motor');
 subplot(4,1,3), plot(t, theta, 'k', 'LineWidth', 3);
-xlabel('t'), ylabel('\theta(t)'),hold on;
+xlabel('t'), ylabel('\theta(t)', 'Fontsize', 28),hold on;
 plot(t, theta_ref, 'r--', 'LineWidth', 3),grid on;
-legend('Angulo del Motor', 'Angulo de Referencia');
+legend('Angulo del motor', 'Angulo de Referencia');
 subplot(4,1,4), plot(t(2:end), Va(2:end), 'k', 'LineWidth', 3); 
-xlabel('t'), ylabel('V_a(t)  T_L'),hold on;
+xlabel('t [s]', 'Fontsize', 28), ylabel('V_a(t)  T_L', 'Fontsize', 28),hold on;
 plot(t(2:end), TL(2:end), 'r', 'LineWidth', 3),grid on;
 legend('Accion de Control', 'Torque');
